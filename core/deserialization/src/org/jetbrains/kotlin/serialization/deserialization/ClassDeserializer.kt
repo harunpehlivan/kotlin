@@ -87,7 +87,7 @@ class ClassDeserializer(private val components: DeserializationComponents) {
          * We ignore kotlin.Cloneable because since Kotlin 1.1, the descriptor for it is created via JvmBuiltInClassDescriptorFactory,
          * but the metadata is still serialized for kotlin-reflect 1.0 to work (see BuiltInsSerializer.kt).
          */
-        private val BLACK_LIST = setOf(
+        val BLACK_LIST = setOf(
                 ClassId.topLevel(KotlinBuiltIns.FQ_NAMES.cloneable.toSafe())
         )
     }
